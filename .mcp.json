@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "skilldocs": {
+      "type": "http",
+      "url": "${user_config.base_url}/mcp"
+    }
+  }
+}

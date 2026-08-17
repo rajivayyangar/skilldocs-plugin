@@ -1,0 +1,17 @@
+{
+  "name": "skilldocs",
+  "owner": {
+    "name": "Rajiv Ayyangar",
+    "url": "https://skilldocs.dev"
+  },
+  "description": "Human review for the docs and skills your agents write.",
+  "plugins": [
+    {
+      "name": "skilldocs",
+      "source": "./",
+      "description": "Send a skill or doc to skilldocs.dev for human review, read back the diff and comment threads, and apply the feedback.",
+      "category": "collaboration",
+      "tags": ["skills", "review", "markdown", "comments"]
+    }
+  ]
+}

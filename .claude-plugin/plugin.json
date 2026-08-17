@@ -1,0 +1,27 @@
+{
+  "name": "skilldocs",
+  "displayName": "SkillDocs",
+  "description": "Send a skill or doc to skilldocs.dev for human review, read back the diff and comment threads, and apply the feedback.",
+  "version": "1.0.0",
+  "author": {
+    "name": "Rajiv Ayyangar",
+    "url": "https://skilldocs.dev"
+  },
+  "homepage": "https://skilldocs.dev",
+  "repository": "https://github.com/rajivayyangar/skilldocs-plugin",
+  "keywords": [
+    "skills",
+    "review",
+    "collaboration",
+    "markdown",
+    "comments"
+  ],
+  "userConfig": {
+    "base_url": {
+      "type": "string",
+      "title": "SkillDocs URL",
+      "description": "Your workspace origin. Workspaces live on subdomains, so change this if yours does — or point it at a local dev server.",
+      "default": "https://skilldocs.dev"
+    }
+  }
+}
