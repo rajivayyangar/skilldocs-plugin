@@ -29,13 +29,18 @@ rather be explicit:
 
 | Command | Does |
 | :-- | :-- |
+| `/skilldocs:find [text]` | Find docs by title, section, or your own |
 | `/skilldocs:share <file>` | Push a file up, print its URL |
 | `/skilldocs:feedback <doc_id>` | The diff and the open threads |
 | `/skilldocs:apply <doc_id> <file>` | Edit → reply → resolve → push back |
 | `/skilldocs:sync <doc_id> <file>` | Write the doc's text over the local file |
 
-Seven tools underneath: `skilldocs_open`, `skilldocs_read`, `skilldocs_diff`,
-`skilldocs_comments`, `skilldocs_reply`, `skilldocs_resolve`, `skilldocs_pull`.
+Eight tools underneath: `skilldocs_find`, `skilldocs_open`, `skilldocs_read`,
+`skilldocs_diff`, `skilldocs_comments`, `skilldocs_reply`, `skilldocs_resolve`,
+`skilldocs_pull`.
+
+A doc you push lands in your own section of the left rail — created from your
+first name if it doesn't exist yet.
 
 ## Not using Claude Code?
 

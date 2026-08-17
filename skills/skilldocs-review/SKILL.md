@@ -17,6 +17,11 @@ tools; the tools here move text and comments between here and the doc.
 1. Read the file.
 2. `skilldocs_open` with its text as `content` and its path as `path`. The path
    is provenance only — it is displayed, never opened.
+
+   A new doc is filed under the pusher's own section in the left rail, created
+   if it doesn't exist yet. Pass `section` to put it somewhere else ("Growth"),
+   or `section: ""` to leave it in the plain Docs list. Re-pushing an existing
+   doc never moves it — if a human has filed it somewhere, it stays there.
 3. Give the person the URL that comes back, and **say what you want reviewed**.
    "Here it is" wastes the round trip; "I'm unsure about the escalation rule in
    step 3" gets you an answer.
@@ -62,10 +67,18 @@ say so, rather than reporting your own edits back as new feedback.
 over the local file. If the local file has changes of its own, show the diff
 before overwriting.
 
-## Which doc?
+## Finding a doc
 
-Doc ids come back from `skilldocs_open`. If you don't have one, ask — pushing to
-a guessed id splices your text into somebody else's document.
+`skilldocs_find` is how you turn "the triage skill" or "my folder" into a
+`doc_id`. Search titles with `query`, narrow to a section with `section`, or
+pass `mine: true` for the docs this account last touched.
+
+Call it with **no arguments** to see every section and what is filed under
+each. Do that before guessing at a section name — "my folder" is a section, and
+the list tells you what it's actually called.
+
+Doc ids also come back from `skilldocs_open`. Never guess one: pushing to a
+guessed id splices your text into somebody else's document.
 
 ## Signing in
 
