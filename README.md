@@ -7,7 +7,7 @@ the threads, applies the feedback, replies, and pulls the finished text down.
 ## Install
 
 ```bash
-/plugin marketplace add rajivayyangar/skilldocs
+/plugin marketplace add rajivayyangar/skilldocs-plugin
 ```
 
 ```bash
