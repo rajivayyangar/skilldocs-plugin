@@ -56,7 +56,7 @@ first name if it doesn't exist yet.
 ## Taking a skill the other way
 
 Every SkillDocs doc with a `name:` in its frontmatter *is* a skill, and its page
-carries an **⊕ Add skill** button that hands you `/skilldocs:add <url>`. The
+carries an **⊕ Install this skill** button that hands you `/skilldocs:add <url>`. The
 command pulls the doc's current text and writes
 `~/.claude/skills/<name>/SKILL.md`; if that file already exists it shows you the
 diff and asks first. The name always comes from the frontmatter, never the doc's
