@@ -1,4 +1,10 @@
 #!/usr/bin/env node
+/* GENERATED FILE — do not edit.
+ * Built from the canonical listener, served at https://skilldocs.dev/listener.mjs
+ * (SkillDocs source: app/public/listener.mjs · node app/scripts/build-plugin-hook.mjs).
+ * An edit here is lost on the next build, and the served copy would keep the
+ * old behaviour anyway.
+ */
 /*
  * SkillDocs skill listener — internal telemetry for skilldocs.dev.
  * Fires on Claude Code's PostToolUse hook (matcher: Skill) and reports which

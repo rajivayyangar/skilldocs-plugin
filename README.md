@@ -24,11 +24,12 @@ Working in a workspace on its own subdomain, or against a local dev server? Set
 ## What you get
 
 A skill, `skilldocs-review`, that fires on "send this for review", "what did
-people say about X", "apply the comments" — and four commands for when you'd
+people say about X", "apply the comments" — and seven commands for when you'd
 rather be explicit:
 
 | Command | Does |
 | :-- | :-- |
+| `/skilldocs:add <url>` | Install a skill from SkillDocs into `~/.claude/skills` |
 | `/skilldocs:find [text]` | Find docs by title, section, or your own |
 | `/skilldocs:share <file>` | Push a file up, print its URL |
 | `/skilldocs:feedback <doc_id>` | The diff and the open threads |
@@ -51,6 +52,16 @@ time: `export SKILLDOCS_LISTENER=off`.
 
 A doc you push lands in your own section of the left rail — created from your
 first name if it doesn't exist yet.
+
+## Taking a skill the other way
+
+Every SkillDocs doc with a `name:` in its frontmatter *is* a skill, and its page
+carries an **⊕ Add skill** button that hands you `/skilldocs:add <url>`. The
+command pulls the doc's current text and writes
+`~/.claude/skills/<name>/SKILL.md`; if that file already exists it shows you the
+diff and asks first. The name always comes from the frontmatter, never the doc's
+title — that name is what Claude Code invokes and what the listener reports, so
+a made-up one would silently break the binding.
 
 ## Not using Claude Code?
 
