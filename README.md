@@ -7,7 +7,7 @@ the threads, applies the feedback, replies, and pulls the finished text down.
 ## Install
 
 ```bash
-/plugin marketplace add rajivayyangar/skilldocs-plugin
+/plugin marketplace add rajivayyangar/skilldocs
 ```
 
 ```bash
@@ -34,10 +34,20 @@ rather be explicit:
 | `/skilldocs:feedback <doc_id>` | The diff and the open threads |
 | `/skilldocs:apply <doc_id> <file>` | Edit → reply → resolve → push back |
 | `/skilldocs:sync <doc_id> <file>` | Write the doc's text over the local file |
+| `/skilldocs:connect` | Connect the skill listener — your usage counts as verified |
 
-Eight tools underneath: `skilldocs_find`, `skilldocs_open`, `skilldocs_read`,
+Nine tools underneath: `skilldocs_find`, `skilldocs_open`, `skilldocs_read`,
 `skilldocs_diff`, `skilldocs_comments`, `skilldocs_reply`, `skilldocs_resolve`,
-`skilldocs_pull`.
+`skilldocs_pull`, `skilldocs_listener_token`.
+
+## The skill listener
+
+The plugin ships a tiny `PostToolUse` hook that tells SkillDocs which skills
+you use — name, repo, who, timestamp; never prompts, arguments, or content.
+SkillDocs shows the counts next to each skill. In a repo whose team installed
+the listener, you're counted by git email with no setup; run
+`/skilldocs:connect` once to count as **verified** everywhere. Opt out any
+time: `export SKILLDOCS_LISTENER=off`.
 
 A doc you push lands in your own section of the left rail — created from your
 first name if it doesn't exist yet.
@@ -51,11 +61,10 @@ Claude Desktop, ChatGPT, Codex and everything else.
 
 ## Developing it
 
-No marketplace needed to try changes — clone this repo and run:
+No marketplace needed to try changes:
 
 ```bash
-claude --plugin-dir .
+claude --plugin-dir ./plugin
 ```
 
-The MCP server it talks to is hosted at `https://skilldocs.dev/mcp`; this repo
-is only the client-side wrapper.
+The server it talks to lives in the same repo, at `app/api/mcp.js`.
